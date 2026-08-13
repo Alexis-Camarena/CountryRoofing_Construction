@@ -16,20 +16,11 @@ import Footer from '../components/Footer.astro';
   <main id="main-content">
 
   <!-- Page Hero -->
-  <!-- About Hero -->
-  <section class="hero-var hero--about">
-    <div class="hero__overlay hero__overlay--about"></div>
-
-    <div class="container">
-      <div class="hero__content hero__content--center">
-        <h1 class="hero__title">
-          ABOUT US
-        </h1>
-
-        <p class="hero__description">
-          Built on experience, straightforward service, and work made to last.
-        </p>
-      </div>
+  <section class="page-hero">
+    <div class="page-hero-overlay"></div>
+    <div class="container page-hero-content">
+      <h1>Building Your Vision Into Reality.</h1>
+      <p>Trusted roofing and construction professionals serving Southwest Michigan.</p>
     </div>
   </section>
 
@@ -42,11 +33,7 @@ import Footer from '../components/Footer.astro';
         <p>We specialize in all aspects of roofing, from installations and repairs to full replacements, for both homes and businesses. Our experienced team uses only the best materials and the latest techniques to ensure your roof is durable and reliable. Whether it's a minor repair or a complete roof replacement, we're committed to excellence in every project we take on.</p>
       </div>
       <div class="about-image">
-        <img
-          src="/images/house_13a.jpg"
-          alt="Roofing project completed by Country Roofing & Construction"
-          loading="lazy"
-        />
+        <img src="/images/c3fa8f52-8b2f-49e6-aa58-d7fd3d0f50a2.jpg" alt="Country Roofing & Construction team at work" loading="lazy" />
       </div>
     </div>
   </section>
@@ -54,17 +41,13 @@ import Footer from '../components/Footer.astro';
   <!-- Guidance -->
   <section class="section section--light">
     <div class="container about-grid about-grid--reverse">
+      <div class="about-image">
+        <img src="/images/d2647cf2-0254-4982-83ca-a8617fc7c099.jpg" alt="Roofing project consultation and planning" loading="lazy" />
+      </div>
       <div class="about-text">
         <h2>Serving Homeowners and Businesses, One Roof at a Time</h2>
         <h3>Expert Guidance from Project Inception to Completion</h3>
         <p>Navigating a project from its early stages to final completion can be complex and challenging. Our team offers comprehensive support and expert guidance to ensure your project's success. With years of experience and a deep understanding of industry best practices, we collaborate with you to plan, execute, and finalize every aspect of your project.</p>
-      </div>
-      <div class="about-image">
-        <img
-          src="/images/building_1b.jpg"
-          alt="Completed roofing project by Country Roofing & Construction"
-          loading="lazy"
-        />
       </div>
     </div>
   </section>
@@ -130,26 +113,33 @@ import Footer from '../components/Footer.astro';
 </BaseLayout>
 
 <style>
-
-  .hero--about {
-    background-image: url('/images/building_1a.jpg');
-    background-size: cover;
-    background-position: center;
-    background-repeat: no-repeat;
-    background-color: #0b1728;
+  .page-hero {
+    position: relative;
+    padding: 8rem 0 5rem;
+    background: url('/images/667ae632a655f464a802dfa8.jpg') center/cover no-repeat;
+    color: var(--color-white);
   }
 
-  .hero__overlay--about {
-    background:
-      linear-gradient(
-        rgba(5, 12, 24, 0.62),
-        rgba(5, 12, 24, 0.72)
-      );
+  .page-hero-overlay {
+    position: absolute;
+    inset: 0;
+    background: linear-gradient(135deg, rgba(15,23,42,0.9) 0%, rgba(30,58,95,0.7) 100%);
   }
-  
-  
 
-  
+  .page-hero-content {
+    position: relative;
+    max-width: 700px;
+  }
+
+  .page-hero-content h1 {
+    color: var(--color-white);
+    margin-bottom: 1rem;
+  }
+
+  .page-hero-content p {
+    font-size: 1.2rem;
+    opacity: 0.9;
+  }
 
   .about-grid {
     display: grid;

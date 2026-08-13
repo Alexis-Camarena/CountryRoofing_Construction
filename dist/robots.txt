@@ -1,4 +1,0 @@
-User-agent: *
-Allow: /
-
-Sitemap: https://countryroofingandconstruction.com/sitemap-index.xml
