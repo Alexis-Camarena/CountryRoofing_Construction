@@ -1,11 +1,23 @@
 ---
 const currentPath = Astro.url.pathname;
 
-const navLinks = [
+// const navLinks = [
+//   { href: '/', label: 'Home' },
+//   { href: '/quote-estimator', label: 'Get a Quote' },
+//   { href: '/about', label: 'About' },
+//   { href: '/services', label: 'Services' },
+//   { href: '/gallery', label: 'Gallery' },
+//   { href: '/contact', label: 'Contact' },
+// ];
+
+const leftLinks = [
   { href: '/', label: 'Home' },
-  { href: '/about', label: 'About' },
-  { href: '/services', label: 'Services' },
+  { href: '/services-redesign', label: 'Services' },
   { href: '/gallery', label: 'Gallery' },
+];
+
+const rightLinks = [
+  { href: '/about', label: 'Who We Are' },
   { href: '/contact', label: 'Contact' },
 ];
 ---
@@ -23,20 +35,41 @@ const navLinks = [
   </div>
 
   <div class="header-main">
-    <div class="header-inner container">
-      <a href="/" class="logo-link" aria-label="Country Roofing & Construction LLC — Home">
-        <img src="/images/logo.png" alt="Country Roofing & Construction LLC" width="200" height="67" />
-      </a>
+    <div class="container header-inner">
+      
+      <nav class="left-nav" id="left-nav" aria-label="Main navigation">
+        <!-- Logo Image -->
+        <a href="/" class="logo-link" aria-label="Country Roofing & Construction LLC — Home">
+          <img src="/images/logo_transparent.png" alt="Country Roofing & Construction LLC" width="200" height="67" />
+        </a>
 
-      <button class="mobile-toggle" aria-label="Toggle navigation menu" aria-expanded="false" aria-controls="main-nav">
-        <span></span>
-        <span></span>
-        <span></span>
-      </button>
+        <button class="mobile-toggle" aria-label="Toggle navigation menu" aria-expanded="false" aria-controls="main-nav">
+          <span></span>
+          <span></span>
+          <span></span>
+        </button>
 
-      <nav class="main-nav" id="main-nav" aria-label="Main navigation">
         <ul class="nav-list" role="list">
-          {navLinks.map(link => (
+            {leftLinks.map(link => (
+              <li>
+                <a
+                  href={link.href}
+                  class:list={['nav-link', { active: currentPath === link.href || (link.href !== '/' && currentPath.startsWith(link.href)) }]}
+                  aria-current={currentPath === link.href ? 'page' : undefined}
+                >
+                  {link.label}
+                </a>
+              </li>
+            ))}
+          </ul>
+
+      </nav>
+
+      <!-- Tab Buttons that are generated -->
+      <nav class="right-nav" id="right-nav" aria-label="Main navigation">
+        
+        <ul class="nav-list" role="list">
+          {rightLinks.map(link => (
             <li>
               <a
                 href={link.href}
@@ -129,16 +162,22 @@ const navLinks = [
     filter: brightness(1.1);
   }
 
-  .main-nav {
+  .right-nav {
     display: flex;
     align-items: center;
     gap: 1.5rem;
   }
 
+  .left-nav {
+    display: flex;
+    align-items: center;
+    gap: 2.5rem;
+  }
+
   .nav-list {
     display: flex;
     list-style: none;
-    gap: 0;
+    gap: 1rem;
   }
 
   .nav-link {
@@ -225,6 +264,7 @@ const navLinks = [
     background: rgba(255, 255, 255, 0.1);
   }
 
+  /* TABLET */
   @media (max-width: 960px) {
     .topbar-text {
       display: none;
@@ -238,7 +278,7 @@ const navLinks = [
       display: flex;
     }
 
-    .main-nav {
+    .right-nav {
       position: fixed;
       top: calc(var(--header-height) + 30px);
       left: 0;
@@ -253,7 +293,7 @@ const navLinks = [
       overflow-y: auto;
     }
 
-    .main-nav.open {
+    .right-nav.open {
       transform: translateX(0);
     }
 
@@ -280,6 +320,8 @@ const navLinks = [
     }
   }
 
+
+  /* MOBILE */
   @media (max-width: 480px) {
     .logo-link img {
       height: 50px;
@@ -289,7 +331,7 @@ const navLinks = [
       height: 70px;
     }
 
-    .main-nav {
+    .right-nav {
       top: calc(70px + 30px);
     }
   }
@@ -297,7 +339,7 @@ const navLinks = [
 
 <script>
   const toggle = document.querySelector('.mobile-toggle');
-  const nav = document.querySelector('.main-nav');
+  const nav = document.querySelector('.right-nav');
 
   toggle?.addEventListener('click', () => {
     const isOpen = nav?.classList.toggle('open');
@@ -317,7 +359,7 @@ const navLinks = [
     if (e.key === 'Escape' && nav?.classList.contains('open')) {
       nav.classList.remove('open');
       toggle?.setAttribute('aria-expanded', 'false');
-      toggle?.focus();
+      // toggle?.focus();
     }
   });
 </script>
