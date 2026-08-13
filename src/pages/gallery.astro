@@ -1,0 +1,427 @@
+---
+import BaseLayout from '../layouts/BaseLayout.astro';
+import Header from '../components/Header.astro';
+import Footer from '../components/Footer.astro';
+
+const projects = [
+  {
+    title: 'Building Roof Project',
+    location: 'Kalamazoo Area',
+    description: 'Progress photos showing the roof work across different stages.',
+    images: ['building_1a.jpg', 'building_1b.jpg', 'building_1c.jpg']
+  },
+  {
+    title: 'Residential Roof Replacement',
+    location: 'Southwest Michigan',
+    description: 'A complete residential roof replacement showing the project from tear-off through installation and final completion.',
+    images: [
+      'house_13a.jpg',
+      'house_13b.jpg',
+      'house_13c.jpg',
+      'house_13d.jpg',
+      'house_13e.jpg',
+      'house_13f.jpg',
+      'house_13g.jpg',
+      'house_13h.jpg',
+      'house_13i.jpg'
+    ]
+  },
+  {
+    title: 'Residential Roof Project',
+    location: 'West Michigan',
+    description: 'A completed home roofing project with multiple angles and progress photos.',
+    images: [
+      'house_1.jpg',
+      'house_2.jpg',
+      'house_3.jpg',
+      'house_4.jpg',
+      'house_5.jpg',
+      'house_6.jpg'
+    ]
+  },
+  {
+    title: 'Barn Roof Project',
+    location: 'Southwest Michigan',
+    description: 'A full roofing project shown from start to finish.',
+    images: ['Barn1.jpg']
+  },
+];
+---
+
+<BaseLayout
+  title="Project Gallery | Country Roofing & Construction LLC"
+  description="Browse our completed roofing and construction projects in Kalamazoo and West Michigan. See the quality craftsmanship that Country Roofing & Construction delivers."
+  canonical="https://countryroofingandconstruction.com/gallery"
+  ogTitle="Our Work | Country Roofing & Construction LLC"
+  ogDescription="View our portfolio of residential and commercial roofing projects across Southwest Michigan."
+  ogImage="/images/66c2619471b5f16616917c27.jpg"
+>
+  <Header />
+
+  <main id="main-content">
+
+  <!-- Page Hero -->
+  <section class="hero hero--gallery">
+    <div class="hero__overlay hero__overlay--gallery"></div>
+
+    <div class="container">
+      <div class="hero__content">
+        <p class="hero__eyebrow">Our Work</p>
+
+        <h1 class="hero__title">
+          Built to Protect.<br />
+          Finished to Last.
+        </h1>
+
+        <p class="hero__description">
+          Browse real roofing and exterior projects completed by Country Roofing
+          &amp; Construction LLC throughout Southwest Michigan.
+        </p>
+
+        <div class="hero__actions">
+          <a href="#projects" class="btn btn--cta">
+            View Recent Projects
+            <span aria-hidden="true">↓</span>
+          </a>
+        </div>
+      </div>
+    </div>
+
+    <div class="gallery-hero__caption">
+      <span>Featured Project</span>
+      <strong>Residential Roof Replacement</strong>
+    </div>
+  </section>
+
+  <section class="gallery-projects" id="projects">
+    
+    <div class="container gallery-header-pad">
+      <div class="section-header section-header--left">
+        <p class="section-eyebrow section-eyebrow--dark">Recent Work</p>
+        <h2>Projects from across Southwest Michigan.</h2>
+        <p>Explore completed roofing projects, replacements, and work in progress from homes and properties throughout the region.</p>
+      </div>
+    </div>
+
+    <div class="container">
+      <div class="project-grid">
+        {projects.map(project => (
+          <article class="project-card">
+            <div class="project-card__header">
+              <span>{project.location}</span>
+              <h2>{project.title}</h2>
+              <p>{project.description}</p>
+            </div>
+
+            {/* <div class="project-card__photos">
+              {project.images.slice(0, 4).map((image, i) => (
+                <a href={`/images/${image}`} target="_blank" rel="noopener noreferrer">
+                  <img src={`/images/${image}`} alt={`${project.title} photo ${i + 1}`} loading="lazy" />
+                </a>
+              ))}
+            </div> */}
+
+
+            <div class="project-card__photos pswp-gallery">
+              {project.images.slice(0, 4).map((image, i) => {
+              const remaining = project.images.length - 4;
+              const isLastVisible = i === 3 && project.images.length > 4;
+
+              return (
+                <a
+                  href={`/images/${image}`}
+                  class="gallery-thumb"
+                  data-pswp-width="1600"
+                  data-pswp-height="1200"
+                >
+                  <img
+                    src={`/images/${image}`}
+                    alt={`${project.title} photo ${i + 1}`}
+                    loading="lazy"
+                  />
+
+                  {isLastVisible && (
+                    <div class="gallery-thumb__overlay">
+                      +{remaining}
+                    </div>
+                  )}
+                </a>
+              );
+            })}
+            </div>
+          </article>
+        ))}
+      </div>
+    </div>
+  </section>
+
+  
+
+  <!-- CTA -->
+  <section class="section section--dark text-center">
+    <div class="container">
+      <h2>Like What You See?</h2>
+      <p class="cta-sub">Let us bring the same quality craftsmanship to your property.</p>
+      <div class="cta-actions">
+        <a href="/contact" class="btn btn--cta">Get A Free Estimate</a>
+        <a href="tel:+12693033604" class="btn btn--outline">Call (269) 303-3604</a>
+      </div>
+    </div>
+  </section>
+
+  </main>
+
+  <Footer />
+</BaseLayout>
+
+<script>
+  import PhotoSwipeLightbox from 'photoswipe/lightbox';
+  import 'photoswipe/style.css';
+
+  const lightbox = new PhotoSwipeLightbox({
+    gallery: '.pswp-gallery',
+    children: 'a',
+    pswpModule: () => import('photoswipe'),
+  });
+
+  lightbox.init();
+</script>
+<style>
+
+  /* Gallery Hero */
+  .hero--gallery {
+    background-image: url('/images/house_4.jpg');
+    background-size: 110% auto;
+    background-position: -100% center;
+    background-repeat: no-repeat;
+    background-color: #0b1728;
+  }
+
+  .hero__overlay--gallery {
+    background:
+      linear-gradient(
+        90deg,
+        rgba(5, 12, 24, 0.96) 0%,
+        rgba(5, 12, 24, 0.88) 30%,
+        rgba(5, 12, 24, 0.35) 60%,
+        rgba(5, 12, 24, 0) 80%,
+        rgba(5, 12, 24, 0.1) 100%
+      ),
+      linear-gradient(
+        180deg,
+        rgba(5, 12, 24, 0.2) 0%,
+        rgba(5, 12, 24, 0.72) 100%
+      );
+  }
+
+  .gallery-hero__caption {
+    position: absolute;
+    z-index: 2;
+    right: clamp(1.5rem, 5vw, 6rem);
+    bottom: 2rem;
+    display: flex;
+    flex-direction: column;
+    align-items: flex-end;
+    color: var(--color-white);
+    text-align: right;
+  }
+
+  .gallery-hero__caption span {
+    margin-bottom: 0.25rem;
+    color: rgba(255, 255, 255, 0.65);
+    font-size: 0.72rem;
+    font-weight: 700;
+    letter-spacing: 0.12em;
+    text-transform: uppercase;
+  }
+
+  .gallery-hero__caption strong {
+    font-size: 0.95rem;
+  }
+
+  @media (max-width: 900px) {
+    .hero--gallery {
+      background-position: 62% center;
+    }
+
+    .hero__overlay--gallery {
+      background: linear-gradient(
+        90deg,
+        rgba(8, 18, 35, 0.93) 0%,
+        rgba(15, 35, 62, 0.78) 62%,
+        rgba(15, 35, 62, 0.48) 100%
+      );
+    }
+
+    .gallery-hero__caption {
+      right: 2rem;
+    }
+  }
+
+  @media (max-width: 600px) {
+    .hero--gallery {
+      background-position: 68% center;
+    }
+
+    .hero__overlay--gallery {
+      background: rgba(8, 18, 35, 0.78);
+    }
+
+    .gallery-hero__caption {
+      display: none;
+    }
+  }
+  
+
+
+  .gallery-projects {
+    position: relative;
+    z-index: 2;
+    margin: 4.5rem 0%;
+  }
+
+  .gallery-header-pad{ 
+    padding-bottom: 1rem;
+  }
+
+  .gallery-thumb {
+    position: relative;
+    display: block;
+    overflow: hidden;
+    border-radius: 10px;
+  }
+
+  .gallery-thumb img {
+    display: block;
+    width: 100%;
+    height: 100%;
+    object-fit: cover;
+    transition: transform .35s ease;
+  }
+
+  .gallery-thumb:hover img {
+    transform: scale(1.05);
+  }
+
+  .gallery-thumb__overlay {
+    position: absolute;
+    inset: 0;
+
+    display: flex;
+    align-items: center;
+    justify-content: center;
+
+    background: rgba(5, 12, 24, 0.45);
+    backdrop-filter: blur(2px);
+
+    color: white;
+    font-size: 2rem;
+    font-weight: 800;
+  }
+
+
+
+
+  /* H1 styling  */
+  
+  
+  
+
+
+  .project-grid {
+    max-width: var(--max-width);
+    margin: 0 auto;
+    display: grid;
+    gap: 2rem;
+  }
+
+  .project-card {
+    background: var(--color-white);
+    border: 1px solid var(--color-border);
+    border-radius: 14px;
+    padding: 1.25rem;
+    box-shadow: 0 10px 24px rgba(15, 23, 42, 0.06);
+  }
+
+  .project-card__header {
+    margin-bottom: 1rem;
+  }
+
+  .project-card__header span {
+    color: var(--color-accent);
+    font-weight: 800;
+    font-size: 0.78rem;
+    text-transform: uppercase;
+    letter-spacing: 0.08em;
+  }
+
+  .project-card__header h2 {
+    font-size: 1.6rem;
+    margin: 0.25rem 0;
+  }
+
+  .project-card__header p {
+    color: var(--color-text-secondary);
+  }
+
+  .project-card__photos {
+    display: grid;
+    grid-template-columns: repeat(4, 1fr);
+    gap: 0.75rem;
+  }
+
+  .project-card__photos a {
+    display: block;
+    aspect-ratio: 4 / 3;
+    overflow: hidden;
+    border-radius: 10px;
+  }
+
+  .project-card__photos img {
+    width: 100%;
+    height: 100%;
+    object-fit: cover;
+  }
+
+  .project-card__photos img:hover {
+    transform: scale(1.04);
+  }
+
+  /* CTA */
+  .cta-sub {
+    color: #c5cdd8;
+    font-size: 1.1rem;
+    margin: 1rem auto 2rem;
+  }
+
+  .cta-actions {
+    display: flex;
+    justify-content: center;
+    gap: 1rem;
+    flex-wrap: wrap;
+  }
+
+  @media (max-width: 768px) {
+    .project-card__photos {
+      grid-template-columns: repeat(2, 1fr);
+    }
+
+    .page-hero {
+      padding: 6rem 0 3rem;
+    }
+  }
+
+  @media (max-width: 480px) {
+    .project-card__photos {
+      grid-template-columns: 1fr;
+    }
+
+    .page-hero {
+      padding: 4.5rem 0 2.5rem;
+    }
+
+    .page-hero-content p {
+      font-size: 1rem;
+    }
+  }
+</style>

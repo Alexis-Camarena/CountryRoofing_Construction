@@ -1,0 +1,660 @@
+---
+import BaseLayout from '../layouts/BaseLayout.astro';
+import Header from '../components/Header.astro';
+import Footer from '../components/Footer.astro';
+
+
+const workStripImages = [
+  'house_13a.jpg',
+  'house_13b.jpg',
+  'house_13c.jpg',
+  'house_13d.jpg',
+  'house_13e.jpg',
+  'house_13f.jpg',
+  'house_13g.jpg',
+  'house_13h.jpg',
+  'house_13i.jpg',
+  'house_1.jpg',
+  'house_2.jpg',
+  'house_3.jpg',
+  'house_4.jpg',
+  'house_5.jpg',
+  'house_6.jpg',
+  'Barn1.jpg'
+
+];
+---
+
+<BaseLayout
+  title="Country Roofing & Construction LLC | West Michigan Roofing Company"
+  description="Top-rated roofing contractor in Kalamazoo, MI. Residential & commercial roofing, roof repair, replacement, storm damage repair. Licensed, insured, 15+ years experience. Free estimates — call (269) 303-3604."
+  canonical="https://countryroofingandconstruction.com/"
+  ogTitle="Country Roofing & Construction LLC"
+  ogDescription="A West Michigan Roofing Company You Can Count On. Quality residential and commercial roofing services in Kalamazoo, Barry, Allegan & Van Buren Counties."
+>
+  <Header />
+
+  <main id="main-content">
+
+  <section class="hero height hero--home">
+    <video
+      class="hero__media"
+      autoplay
+      muted
+      loop
+      playsinline
+      preload="auto"
+      poster="/images/667aa1e3e39b021f09a8cdf0.jpg"
+    >
+      <source src="/videos/pan_stabalized.mp4" type="video/mp4" />
+    </video>
+
+    <div class="hero__overlay hero__overlay--home"></div>
+
+    <div class="container">
+      <div class="hero__content">
+        <p class="hero__eyebrow">
+          Local Crew • Licensed &amp; Insured • 15+ Years Experience
+        </p>
+
+        <h1 class="hero__title hero__title--shadow">
+          <span>Roofing built for</span>
+          <span>Michigan weather.</span>
+        </h1>
+
+        <p class="hero__description hero__description--shadow">
+          From Kalamazoo to Barry, Allegan, and Van Buren County, Country Roofing
+          &amp; Construction helps local homeowners handle repairs, replacements,
+          and storm damage with a crew that is easy to reach and ready to work.
+        </p>
+
+        <div class="hero__actions">
+          <a href="/estimate" class="btn btn--cta">Get Instant Estimate</a>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- Trust Bar -->
+  <section class="trust-bar">
+    <div class="container trust-bar-inner">
+      <div class="trust-item">
+        <svg aria-hidden="true" width="28" height="28" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M12 22s8-4 8-10V5l-8-3-8 3v7c0 6 8 10 8 10z"/></svg>
+        <span>Licensed &amp; Insured</span>
+      </div>
+      <div class="trust-item">
+        <svg aria-hidden="true" width="28" height="28" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><circle cx="12" cy="12" r="10"/><polyline points="12 6 12 12 16 14"/></svg>
+        <span>15+ Years Experience</span>
+      </div>
+      <div class="trust-item">
+        <svg aria-hidden="true" width="28" height="28" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M20.59 13.41l-7.17 7.17a2 2 0 01-2.83 0L2 12V2h10l8.59 8.59a2 2 0 010 2.82z"/><line x1="7" y1="7" x2="7.01" y2="7"/></svg>
+        <span>Free Estimates</span>
+      </div>
+      <div class="trust-item">
+        <svg aria-hidden="true" width="28" height="28" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M22 11.08V12a10 10 0 11-5.93-9.14"/><polyline points="22 4 12 14.01 9 11.01"/></svg>
+        <span>Warranty Backed</span>
+      </div>
+      <div class="trust-item">
+        <svg aria-hidden="true" width="28" height="28" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M17 21v-2a4 4 0 00-4-4H5a4 4 0 00-4 4v2"/><circle cx="9" cy="7" r="4"/><path d="M23 21v-2a4 4 0 00-3-3.87"/><path d="M16 3.13a4 4 0 010 7.75"/></svg>
+        <span>Locally Owned</span>
+      </div>
+    </div>
+  </section>
+
+
+  <!-- Services SEO Section -->
+  <section class="home-services">
+    <div class="container">
+
+        <div class="section-header section-header--left">
+          <p class="section-eyebrow section-eyebrow--dark">How We Can Help</p>
+          <h2>Roofing and exterior solutions for common property problems.</h2>
+          <p>
+            From leaks and missing shingles to full roof replacements, we help
+            homeowners understand what needs attention and what the next step should be.
+          </p>
+        </div>
+
+      <div class="home-services__grid">
+        <article class="home-service-card">
+          <h3>Roof Repair</h3>
+          <p> Help with leaks, missing shingles, flashing problems, and isolated areas of damage.</p>
+        </article>
+
+        <article class="home-service-card">
+          <h3>Roof Replacement</h3>
+          <p>
+            Full replacement for aging roofs, recurring problems, or widespread
+            storm damage.
+          </p>
+        </article>
+
+        <article class="home-service-card">
+          <h3>Storm Damage</h3>
+          <p>
+            Inspection and repair guidance after wind, hail, and heavy rain.
+          </p>
+        </article>
+
+        <article class="home-service-card">
+          <h3>Exterior Work</h3>
+          <p>
+            Siding, gutters, commercial roofing, and related exterior updates.
+          </p>
+        </article>
+      </div>
+
+      <div class="home-service-btn">
+        <a href="/services-redesign" class="btn btn--primary">Explore All Services</a>
+      </div>
+    </div>
+  </section>
+
+  <!-- Featured Work Video -->
+  <section class="home-video-feature">
+    <a href="/gallery" class="home-video-feature__link">
+      <video
+        class="home-video-feature__media"
+        autoplay
+        muted
+        loop
+        playsinline
+        preload="metadata"
+        poster="/images/house_13a.jpg"
+      >
+        <source src="/videos/home_gallery_teaser.mov" type="video/mp4" />
+      </video>
+
+      <div class="home-video-feature__overlay"></div>
+
+      <div class="home-video-feature__content">
+        <p class="section-eyebrow section-eyebrow--light">Recent Work</p>
+
+        <h2>Real Homes.<br>Real Results.</h2>
+
+        <span class="home-video-feature__cta">
+          View Project Gallery
+          <span aria-hidden="true">→</span>
+        </span>
+      </div>
+    </a>
+  </section>
+
+  <!-- What To Expect Section -->
+  <section class="section section--light home-why">
+      <div class="container">
+
+        <div class="section-header section-header--left">
+          <p class="section-eyebrow section-eyebrow--dark">What You Can Expect</p>
+          <h2>A straightforward approach from the first concern to the finished project.</h2>
+        </div>
+
+        <div class="home-why__grid">
+          <div class="home-why__item">
+            <span>01</span>
+            <h3>Understand the Problem</h3>
+            <p>We start by looking at what is happening with the roof or exterior.</p>
+          </div>
+
+          <div class="home-why__item">
+            <span>02</span>
+            <h3>Review the Options</h3>
+            <p>We explain what needs attention and what solutions may make sense.</p>
+          </div>
+
+          <div class="home-why__item">
+            <span>03</span>
+            <h3>Plan the Work</h3>
+            <p>Once the direction is clear, the project can be scheduled and prepared.</p>
+          </div>
+
+          <div class="home-why__item">
+            <span>04</span>
+            <h3>Complete the Project</h3>
+            <p>The work is completed and reviewed so you know what was done.</p>
+          </div>
+        </div>
+      </div>
+    </section>
+
+
+
+  <!-- <section class="hero-redesign">
+      
+    <aside class="estimate-card" id="instant-estimate" aria-label="Instant estimate callout">
+      <span class="estimate-card__label">Coming Soon</span>
+      <h2>Start with a quick estimate</h2>
+      <p>Use the instant estimator to get a starting point, then our team can follow up with real guidance based on your roof, timeline, and budget.</p>
+
+     
+
+      <div class="estimate-card__placeholder">
+        Instant estimator embed area
+      </div>
+      <a href="tel:+12693033604" class="estimate-card__phone">Prefer to talk? Call (269) 303-3604</a>
+    </aside>
+  </section> -->
+
+  
+
+  <!-- CTA Banner -->
+  <section class="cta-banner">
+    <div class="cta-overlay"></div>
+    <div class="container cta-content">
+      <h2>Providing Residential &amp; Commercial Construction Solutions</h2>
+      <a href="tel:+12693033604" class="btn btn--cta">CALL NOW: (269) 303-3604</a>
+    </div>
+  </section>
+
+  </main>
+
+  <Footer />
+</BaseLayout>
+
+<style>
+
+  /* Hero */
+  .hero__overlay--home {
+    background:
+      linear-gradient(
+        90deg,
+        rgba(5, 12, 24, 0.96) 0%,
+        rgba(5, 12, 24, 0.88) 30%,
+        rgba(5, 12, 24, 0.35) 60%,
+        rgba(5, 12, 24, 0) 80%,
+        rgba(5, 12, 24, 0.1) 100%
+      ),
+      linear-gradient(
+        180deg,
+        rgba(5, 12, 24, 0.2) 0%,
+        rgba(5, 12, 24, 0.72) 100%
+      );
+  }
+
+  .hero--home .hero__title {
+    text-shadow: 0 3px 18px rgba(0, 0, 0, 0.45);
+  }
+
+  .hero--home .hero__description {
+    text-shadow: 0 2px 12px rgba(0, 0, 0, 0.45);
+  }
+
+  .height {
+    min-height: 609px;
+  }
+
+
+  /* Trust Bar */
+  .trust-bar {
+    background: var(--color-dark);
+    color: var(--color-white);
+    padding: 1.25rem 0;
+    border-top: 3px solid var(--color-accent);
+  }
+
+  .trust-bar-inner {
+    display: flex;
+    justify-content: space-between;
+    flex-wrap: wrap;
+    gap: 1rem;
+  }
+
+  .trust-item {
+    display: flex;
+    align-items: center;
+    gap: 0.625rem;
+    font-weight: 600;
+    font-size: 0.9rem;
+  }
+  
+
+  /* Homepage Services Preview */
+  .home-services {
+    margin: 4.5rem 0%;
+  }
+
+  .home-services__grid {
+    display: grid;
+    grid-template-columns: repeat(4, minmax(0, 1fr));
+    gap: 1.25rem;
+  }
+
+  .home-service-card {
+    min-height: 210px;
+    padding: 1.75rem;
+    background: var(--color-light);
+    border: 1px solid var(--color-border);
+    border-radius: 14px;
+    transition:
+      transform 0.2s ease,
+      border-color 0.2s ease,
+      box-shadow 0.2s ease;
+  }
+
+  .home-service-card:hover {
+    transform: translateY(-3px);
+    border-color: var(--color-primary-light);
+    box-shadow: 0 12px 28px rgba(15, 23, 42, 0.08);
+  }
+
+  .home-service-card h3 {
+    margin-bottom: 0.75rem;
+    color: var(--color-primary);
+    font-size: 1.25rem;
+  }
+
+  .home-service-card p {
+    color: var(--color-text-secondary);
+    line-height: 1.7;
+  }
+
+  .home-service-btn {
+    align-items: center;
+    padding: 1rem 0;
+  }
+
+
+  @media (max-width: 1000px) {
+    .home-services__grid {
+      grid-template-columns: repeat(2, minmax(0, 1fr));
+    }
+  }
+
+  @media (max-width: 600px) {
+    .home-services {
+      text-align: left;
+    }
+
+    .home-services h2,
+    .home-services > p:not(.eyebrow) {
+      margin-left: 0;
+    }
+
+    .home-services__grid {
+      grid-template-columns: 1fr;
+    }
+
+    .home-service-card {
+      min-height: auto;
+    }
+
+    .home-services > .container > .btn {
+      display: block;
+      width: 100%;
+    }
+  }
+
+  /* Featured Work Video */
+.home-video-feature {
+  position: relative;
+  overflow: hidden;
+  background: var(--color-dark);
+}
+
+.home-video-feature__link {
+  position: relative;
+  display: block;
+  min-height: 600px;
+  overflow: hidden;
+  color: var(--color-white);
+}
+
+.home-video-feature__media {
+  position: absolute;
+  inset: 0;
+  width: 100%;
+  height: 100%;
+  object-fit: cover;
+}
+
+.home-video-feature__overlay {
+  position: absolute;
+  inset: 0;
+  z-index: 1;
+  background:
+    linear-gradient(
+      90deg,
+      rgba(5, 12, 24, 0.88) 0%,
+      rgba(5, 12, 24, 0.55) 42%,
+      rgba(5, 12, 24, 0.15) 75%,
+      rgba(5, 12, 24, 0.05) 100%
+    ),
+    linear-gradient(
+      0deg,
+      rgba(5, 12, 24, 0.5) 0%,
+      transparent 60%
+    );
+}
+
+.home-video-feature__content {
+  position: relative;
+  z-index: 2;
+  min-height: 600px;
+  max-width: var(--max-width);
+  margin: 0 auto;
+  padding: 4.5rem 6rem;
+
+  display: flex;
+  flex-direction: column;
+  justify-content: flex-end;
+  align-items: flex-start;
+}
+
+.home-video-feature__content h2 {
+  max-width: 700px;
+  margin-bottom: 1.25rem;
+  color: var(--color-white);
+  font-size: clamp(2.4rem, 4vw, 4rem);
+}
+
+.home-video-feature__cta {
+  display: inline-flex;
+  align-items: center;
+  gap: 0.65rem;
+
+  color: var(--color-white);
+  font-weight: 700;
+  font-size: 1rem;
+}
+
+.home-video-feature__cta span {
+  transition: transform 0.2s ease;
+}
+
+.home-video-feature__link:hover .home-video-feature__cta span {
+  transform: translateX(5px);
+}
+
+@media (max-width: 768px) {
+  .home-video-feature__link,
+  .home-video-feature__content {
+    min-height: 420px;
+  }
+
+  .home-video-feature__content {
+    padding: 3rem 2rem;
+  }
+}
+
+@media (max-width: 480px) {
+  .home-video-feature__link,
+  .home-video-feature__content {
+    min-height: 360px;
+  }
+
+  .home-video-feature__content {
+    padding: 2rem 1rem;
+  }
+}
+
+
+  /* Estimate */
+  .estimate-card {
+    background: rgba(255, 255, 255, 0.96);
+    color: var(--color-text);
+    border-radius: 18px;
+    padding: 1.5rem;
+    box-shadow: 0 24px 60px rgba(0, 0, 0, 0.32);
+    border-top: 5px solid var(--local-accent);
+  }
+
+  .estimate-card__label {
+    display: inline-block;
+    background: rgba(79, 111, 150, 0.14);;
+    color: var(--local-accent);
+    font-weight: 700;
+    font-size: 0.75rem;
+    letter-spacing: 0.08em;
+    text-transform: uppercase;
+    padding: 0.35rem 0.65rem;
+    border-radius: 999px;
+    margin-bottom: 0.75rem;
+  }
+
+  .estimate-card h2 {
+    margin-bottom: 0.5rem;
+  }
+
+  .estimate-card p {
+    color: var(--color-text-secondary);
+    margin-bottom: 1rem;
+  }
+
+  .estimate-card__placeholder {
+    display: grid;
+    place-items: center;
+    min-height: 170px;
+    border: 2px dashed rgba(30, 58, 95, 0.35);
+    border-radius: 12px;
+    background: var(--color-light);
+    color: var(--color-text-secondary);
+    font-weight: 700;
+    text-align: center;
+    padding: 1rem;
+    margin-bottom: 1rem;
+  }
+
+  .estimate-card__phone {
+    color: var(--color-primary);
+    font-weight: 700;
+  }
+
+
+  /* ========================================
+     What You Can Expect
+  ======================================== */
+
+  .home-why__grid {
+    display: grid;
+    grid-template-columns: repeat(4, minmax(0, 1fr));
+    gap: 1.5rem;
+  }
+
+  .home-why__item {
+    padding-top: 1.5rem;
+    border-top: 2px solid var(--color-border);
+  }
+
+  .home-why__item > span {
+    display: block;
+    margin-bottom: 1rem;
+    color: var(--color-primary-light);
+    font-family: var(--font-heading);
+    font-size: 0.78rem;
+    font-weight: 700;
+    letter-spacing: 0.1em;
+  }
+
+  .home-why__item h3 {
+    margin-bottom: 0.75rem;
+    font-size: 1.15rem;
+  }
+
+  .home-why__item p {
+    color: var(--color-text-secondary);
+    line-height: 1.7;
+  }
+
+
+  /* CTA Banner */
+  .cta-banner {
+    position: relative;
+    background: url('/images/667c353cb1f95164e0cfd6df.jpg') center/cover no-repeat;
+    padding: 5rem 0;
+    text-align: center;
+    color: var(--color-white);
+  }
+
+  .cta-overlay {
+    position: absolute;
+    inset: 0;
+    background: rgba(12, 20, 37, 0.85);
+  }
+
+  .cta-content {
+    position: relative;
+  }
+
+  .cta-content h2 {
+    color: var(--color-white);
+    margin-bottom: 2rem;
+    max-width: 700px;
+    margin-left: auto;
+    margin-right: auto;
+  }
+
+  
+  /* TABLET SCREEN WIDTH */
+  @media (max-width: 768px) {
+    .services-intro {
+      grid-template-columns: 1fr;
+    }
+
+    .service-cards {
+      grid-template-columns: 1fr;
+    }
+
+    .testimonials-grid {
+      grid-template-columns: 1fr;
+    }
+
+    .trust-bar-inner {
+      justify-content: center;
+    }
+
+  }
+
+
+  /* PHONE SCREEN WIDTH  */
+  @media (max-width: 480px) {
+
+    .hero-testimonial {
+      padding: 1rem 1.25rem;
+    }
+
+    .hero-testimonial p {
+      font-size: 0.875rem;
+    }
+
+    .trust-item {
+      font-size: 0.8rem;
+    }
+
+    .trust-item svg {
+      width: 22px;
+      height: 22px;
+    }
+
+    .service-card-content {
+      padding: 1rem;
+    }
+
+    .testimonial-card {
+      padding: 1.25rem;
+    }
+
+    .cta-banner {
+      padding: 3rem 0;
+    }
+  }
+</style>

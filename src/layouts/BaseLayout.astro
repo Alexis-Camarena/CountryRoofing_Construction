@@ -1,0 +1,155 @@
+---
+interface Props {
+  title: string;
+  description: string;
+  canonical: string;
+  ogTitle?: string;
+  ogDescription?: string;
+  ogImage?: string;
+  extraSchema?: object;
+}
+
+const { title, description, canonical, ogTitle, ogDescription, ogImage = '/images/logo.png', extraSchema } = Astro.props;
+
+const schema = {
+  "@context": "https://schema.org",
+  "@type": "RoofingContractor",
+  "name": "Country Roofing & Construction LLC",
+  "url": "https://countryroofingandconstruction.com",
+  "logo": "https://countryroofingandconstruction.com/images/logo.png",
+  "image": "https://countryroofingandconstruction.com/images/logo.png",
+  "description": "Top-quality residential and commercial roofing services in West Michigan. Licensed, insured, 15+ years experience.",
+  "telephone": "+1-269-303-3604",
+  "email": "269country@gmail.com",
+  "address": {
+    "@type": "PostalAddress",
+    "addressLocality": "Kalamazoo",
+    "addressRegion": "MI",
+    "addressCountry": "US"
+  },
+  "areaServed": [
+    { "@type": "AdministrativeArea", "name": "Kalamazoo County, MI" },
+    { "@type": "AdministrativeArea", "name": "Barry County, MI" },
+    { "@type": "AdministrativeArea", "name": "Allegan County, MI" },
+    { "@type": "AdministrativeArea", "name": "Van Buren County, MI" }
+  ],
+  "geo": { "@type": "GeoCoordinates", "latitude": "42.2917", "longitude": "-85.5872" },
+  "hasOfferCatalog": {
+    "@type": "OfferCatalog",
+    "name": "Roofing & Construction Services",
+    "itemListElement": [
+      { "@type": "Offer", "itemOffered": { "@type": "Service", "name": "Residential Roofing" } },
+      { "@type": "Offer", "itemOffered": { "@type": "Service", "name": "Commercial Roofing" } },
+      { "@type": "Offer", "itemOffered": { "@type": "Service", "name": "Roof Repair" } },
+      { "@type": "Offer", "itemOffered": { "@type": "Service", "name": "Storm Damage Repair" } },
+      { "@type": "Offer", "itemOffered": { "@type": "Service", "name": "Home Renovations" } },
+      { "@type": "Offer", "itemOffered": { "@type": "Service", "name": "Roof Replacement" } },
+      { "@type": "Offer", "itemOffered": { "@type": "Service", "name": "Siding Installation" } },
+      { "@type": "Offer", "itemOffered": { "@type": "Service", "name": "Gutter Installation" } }
+    ]
+  },
+  "sameAs": ["https://facebook.com/profile.php?id=61555016512639", "https://share.google/ukpMkPnkgfJqEkO99"],
+  "priceRange": "$$",
+  "paymentAccepted": "Cash, Credit Card, Financing Available",
+  "aggregateRating": {
+    "@type": "AggregateRating",
+    "ratingValue": "5",
+    "reviewCount": "5",
+    "bestRating": "5",
+    "worstRating": "1"
+  },
+  "review": [
+    {
+      "@type": "Review",
+      "author": { "@type": "Person", "name": "Agustin G." },
+      "reviewRating": { "@type": "Rating", "ratingValue": "5", "bestRating": "5" },
+      "reviewBody": "Great group of workers, communication throughout the whole project — there's no stone left unturned. They have done 4 roofs for my family and received the same great result every time. Highly recommended."
+    },
+    {
+      "@type": "Review",
+      "author": { "@type": "Person", "name": "Jeremy W." },
+      "reviewRating": { "@type": "Rating", "ratingValue": "5", "bestRating": "5" },
+      "reviewBody": "The crew was well organized, polite, and did a fantastic job on my roof."
+    },
+    {
+      "@type": "Review",
+      "author": { "@type": "Person", "name": "Gustavo V." },
+      "reviewRating": { "@type": "Rating", "ratingValue": "5", "bestRating": "5" },
+      "reviewBody": "Country Roofing & Construction did a great job on my exteriors. They are timely and professional people."
+    },
+    {
+      "@type": "Review",
+      "author": { "@type": "Person", "name": "Pamela E." },
+      "reviewRating": { "@type": "Rating", "ratingValue": "5", "bestRating": "5" },
+      "reviewBody": "Job well done. I would recommend and hire Omar again. His staff were quick and efficient."
+    },
+    {
+      "@type": "Review",
+      "author": { "@type": "Person", "name": "Jesus C." },
+      "reviewRating": { "@type": "Rating", "ratingValue": "5", "bestRating": "5" },
+      "reviewBody": "They had the best prices around. Our roof was done very quick and looks amazing. Wouldn't hesitate calling these guys again and highly recommend to anyone looking for exterior renovations."
+    }
+  ]
+};
+---
+
+<!doctype html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>{title}</title>
+    <meta name="description" content={description} />
+    <link rel="canonical" href={canonical} />
+
+    <!-- Open Graph -->
+    <meta property="og:type" content="website" />
+    <meta property="og:title" content={ogTitle || title} />
+    <meta property="og:description" content={ogDescription || description} />
+    <meta property="og:image" content={`https://countryroofingandconstruction.com${ogImage}`} />
+    <meta property="og:image:width" content="1200" />
+    <meta property="og:image:height" content="630" />
+    <meta property="og:url" content={canonical} />
+    <meta property="og:site_name" content="Country Roofing & Construction LLC" />
+    <meta property="og:locale" content="en_US" />
+
+    <!-- Twitter Card -->
+    <meta name="twitter:card" content="summary_large_image" />
+    <meta name="twitter:title" content={ogTitle || title} />
+    <meta name="twitter:description" content={ogDescription || description} />
+    <meta name="twitter:image" content={`https://countryroofingandconstruction.com${ogImage}`} />
+
+    <!-- Geo / Local SEO -->
+    <meta name="geo.region" content="US-MI" />
+    <meta name="geo.placename" content="Kalamazoo" />
+    <meta name="geo.position" content="42.2917;-85.5872" />
+    <meta name="ICBM" content="42.2917, -85.5872" />
+
+    <!-- Search Engine Directives -->
+    <meta name="robots" content="index, follow, max-snippet:-1, max-image-preview:large, max-video-preview:-1" />
+
+    <!-- Favicon -->
+    <link rel="icon" href="/favicon.ico" sizes="32x32" />
+    <link rel="icon" href="/favicon.svg" type="image/svg+xml" />
+    <link rel="apple-touch-icon" href="/images/logo.png" />
+
+    <!-- Fonts (preload critical, async rest) -->
+    <link rel="preconnect" href="https://fonts.googleapis.com" />
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+    <link rel="preload" as="style" href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600&family=Poppins:wght@600;700;800&display=swap" />
+    <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600&family=Poppins:wght@600;700;800&display=swap" rel="stylesheet" media="print" onload="this.media='all'" />
+
+    <!-- Global Styles -->
+    <style is:global>
+      @import '../styles/global.css';
+    </style>
+
+    <!-- JSON-LD Schema -->
+    <script type="application/ld+json" set:html={JSON.stringify(schema)} />
+    {extraSchema && <script type="application/ld+json" set:html={JSON.stringify(extraSchema)} />}
+  </head>
+  <body>
+    <a href="#main-content" class="skip-link">Skip to main content</a>
+    <slot />
+  </body>
+</html>
