@@ -1,0 +1,281 @@
+---
+import BaseLayout from '../layouts/BaseLayout.astro';
+import Header from '../components/Header.astro';
+import Footer from '../components/Footer.astro';
+---
+
+<BaseLayout
+  title="About Us | Country Roofing & Construction LLC — Kalamazoo, MI"
+  description="Learn about Country Roofing & Construction LLC — a licensed, insured West Michigan roofing company with 15+ years of experience serving Kalamazoo, Barry, Allegan & Van Buren Counties."
+  canonical="https://countryroofingandconstruction.com/about"
+  ogTitle="About Country Roofing & Construction LLC"
+  ogDescription="Building your vision into reality. Trusted roofing and construction professionals in Southwest Michigan."
+>
+  <Header />
+
+  <main id="main-content">
+
+  <!-- Page Hero -->
+  <section class="page-hero">
+    <div class="page-hero-overlay"></div>
+    <div class="container page-hero-content">
+      <h1>Building Your Vision Into Reality.</h1>
+      <p>Trusted roofing and construction professionals serving Southwest Michigan.</p>
+    </div>
+  </section>
+
+  <!-- About Intro -->
+  <section class="section">
+    <div class="container about-grid">
+      <div class="about-text">
+        <h2>Who We Are</h2>
+        <p>At Country Roofing &amp; Construction LLC, we take pride in offering top-quality roofing and construction services right here in our community. Our focus is on delivering exceptional craftsmanship and ensuring our customers are always satisfied.</p>
+        <p>We specialize in all aspects of roofing, from installations and repairs to full replacements, for both homes and businesses. Our experienced team uses only the best materials and the latest techniques to ensure your roof is durable and reliable. Whether it's a minor repair or a complete roof replacement, we're committed to excellence in every project we take on.</p>
+      </div>
+      <div class="about-image">
+        <img src="/images/c3fa8f52-8b2f-49e6-aa58-d7fd3d0f50a2.jpg" alt="Country Roofing & Construction team at work" loading="lazy" />
+      </div>
+    </div>
+  </section>
+
+  <!-- Guidance -->
+  <section class="section section--light">
+    <div class="container about-grid about-grid--reverse">
+      <div class="about-image">
+        <img src="/images/d2647cf2-0254-4982-83ca-a8617fc7c099.jpg" alt="Roofing project consultation and planning" loading="lazy" />
+      </div>
+      <div class="about-text">
+        <h2>Serving Homeowners and Businesses, One Roof at a Time</h2>
+        <h3>Expert Guidance from Project Inception to Completion</h3>
+        <p>Navigating a project from its early stages to final completion can be complex and challenging. Our team offers comprehensive support and expert guidance to ensure your project's success. With years of experience and a deep understanding of industry best practices, we collaborate with you to plan, execute, and finalize every aspect of your project.</p>
+      </div>
+    </div>
+  </section>
+
+  <!-- Credentials -->
+  <section class="section">
+    <div class="container">
+      <div class="section-header">
+        <h2>Why Choose Us</h2>
+      </div>
+      <div class="credentials-grid">
+        <div class="credential-card">
+          <div class="credential-icon">
+            <svg aria-hidden="true" width="40" height="40" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><circle cx="12" cy="12" r="10"/><polyline points="12 6 12 12 16 14"/></svg>
+          </div>
+          <h3>15+ Years Experience</h3>
+          <p>Over 15 years of combined experience in the roofing and construction industry.</p>
+        </div>
+        <div class="credential-card">
+          <div class="credential-icon">
+            <svg aria-hidden="true" width="40" height="40" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M12 22s8-4 8-10V5l-8-3-8 3v7c0 6 8 10 8 10z"/></svg>
+          </div>
+          <h3>Licensed &amp; Insured</h3>
+          <p>Fully licensed and insured to provide services in Southwest Michigan.</p>
+        </div>
+        <div class="credential-card">
+          <div class="credential-icon">
+            <svg aria-hidden="true" width="40" height="40" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M21 10c0 7-9 13-9 13s-9-6-9-13a9 9 0 0118 0z"/><circle cx="12" cy="10" r="3"/></svg>
+          </div>
+          <h3>Local &amp; Community Focused</h3>
+          <p>Based in Kalamazoo, MI, serving our neighbors and community with pride.</p>
+        </div>
+        <div class="credential-card">
+          <div class="credential-icon">
+            <svg aria-hidden="true" width="40" height="40" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M22 11.08V12a10 10 0 11-5.93-9.14"/><polyline points="22 4 12 14.01 9 11.01"/></svg>
+          </div>
+          <h3>Quality Guaranteed</h3>
+          <p>We stand behind every project with warranties on craftsmanship and materials.</p>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- Service Area -->
+  <section class="section section--dark">
+    <div class="container text-center">
+      <h2>Service Area</h2>
+      <p class="service-area-sub">Proudly serving Southwest Michigan communities</p>
+      <div class="area-tags">
+        <span class="area-tag">Kalamazoo County</span>
+        <span class="area-tag">Barry County</span>
+        <span class="area-tag">Allegan County</span>
+        <span class="area-tag">Van Buren County</span>
+        <span class="area-tag">Surrounding Areas</span>
+      </div>
+      <a href="/contact" class="btn btn--cta mt-4">Get A Free Estimate</a>
+    </div>
+  </section>
+
+  </main>
+
+  <Footer />
+</BaseLayout>
+
+<style>
+  .page-hero {
+    position: relative;
+    padding: 8rem 0 5rem;
+    background: url('/images/667ae632a655f464a802dfa8.jpg') center/cover no-repeat;
+    color: var(--color-white);
+  }
+
+  .page-hero-overlay {
+    position: absolute;
+    inset: 0;
+    background: linear-gradient(135deg, rgba(15,23,42,0.9) 0%, rgba(30,58,95,0.7) 100%);
+  }
+
+  .page-hero-content {
+    position: relative;
+    max-width: 700px;
+  }
+
+  .page-hero-content h1 {
+    color: var(--color-white);
+    margin-bottom: 1rem;
+  }
+
+  .page-hero-content p {
+    font-size: 1.2rem;
+    opacity: 0.9;
+  }
+
+  .about-grid {
+    display: grid;
+    grid-template-columns: 1fr 1fr;
+    gap: 3rem;
+    align-items: center;
+  }
+
+  .about-grid--reverse {
+    direction: rtl;
+  }
+
+  .about-grid--reverse > * {
+    direction: ltr;
+  }
+
+  .about-text h3 {
+    color: var(--color-text-secondary);
+    font-weight: 500;
+    margin-bottom: 1rem;
+    font-size: 1.1rem;
+  }
+
+  .about-text p {
+    color: var(--color-text-secondary);
+    font-size: 1.05rem;
+    margin-top: 1rem;
+    line-height: 1.7;
+  }
+
+  .about-image img {
+    border-radius: 8px;
+    box-shadow: 0 20px 40px rgba(0,0,0,0.12);
+    width: 100%;
+  }
+
+  .credentials-grid {
+    display: grid;
+    grid-template-columns: repeat(4, 1fr);
+    gap: 2rem;
+  }
+
+  .credential-card {
+    text-align: center;
+    padding: 2rem 1.5rem;
+    border-radius: 8px;
+    background: var(--color-light);
+    transition: transform 0.3s;
+  }
+
+  .credential-card:hover {
+    transform: translateY(-4px);
+  }
+
+  .credential-icon {
+    color: var(--color-primary);
+    margin-bottom: 1rem;
+  }
+
+  .credential-card h3 {
+    font-size: 1.1rem;
+    margin-bottom: 0.75rem;
+  }
+
+  .credential-card p {
+    color: var(--color-text-secondary);
+    font-size: 0.9rem;
+  }
+
+  .service-area-sub {
+    color: #c5cdd8;
+    font-size: 1.1rem;
+    margin-top: 0.75rem;
+    margin-bottom: 2rem;
+  }
+
+  .area-tags {
+    display: flex;
+    flex-wrap: wrap;
+    justify-content: center;
+    gap: 0.75rem;
+    margin-bottom: 2rem;
+  }
+
+  .area-tag {
+    background: rgba(255,255,255,0.1);
+    border: 1px solid rgba(255,255,255,0.2);
+    padding: 0.625rem 1.25rem;
+    border-radius: 50px;
+    font-size: 0.95rem;
+  }
+
+  @media (max-width: 768px) {
+    .about-grid {
+      grid-template-columns: 1fr;
+    }
+
+    .about-grid--reverse {
+      direction: ltr;
+    }
+
+    .credentials-grid {
+      grid-template-columns: 1fr 1fr;
+    }
+
+    .page-hero {
+      padding: 6rem 0 3rem;
+    }
+  }
+
+  @media (max-width: 500px) {
+    .credentials-grid {
+      grid-template-columns: 1fr;
+    }
+  }
+
+  @media (max-width: 480px) {
+    .page-hero {
+      padding: 4.5rem 0 2.5rem;
+    }
+
+    .page-hero-content p {
+      font-size: 1rem;
+    }
+
+    .about-grid {
+      gap: 2rem;
+    }
+
+    .credential-card {
+      padding: 1.25rem 1rem;
+    }
+
+    .area-tag {
+      padding: 0.5rem 1rem;
+      font-size: 0.85rem;
+    }
+  }
+</style>

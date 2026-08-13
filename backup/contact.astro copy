@@ -1,0 +1,270 @@
+---
+import BaseLayout from '../layouts/BaseLayout.astro';
+import Header from '../components/Header.astro';
+import Footer from '../components/Footer.astro';
+---
+
+<BaseLayout
+  title="Contact Us | Country Roofing & Construction LLC — (269) 303-3604"
+  description="Get a free roofing estimate from Country Roofing & Construction LLC. Call (269) 303-3604 or fill out our contact form. Serving Kalamazoo, Barry, Allegan & Van Buren Counties."
+  canonical="https://countryroofingandconstruction.com/contact"
+  ogTitle="Contact Country Roofing & Construction LLC"
+  ogDescription="Need roofing help? Call (269) 303-3604 or email us for a free estimate. Serving West Michigan."
+>
+  <Header />
+
+  <main id="main-content">
+
+  <!-- Page Hero -->
+  <section class="page-hero">
+    <div class="page-hero-overlay"></div>
+    <div class="container page-hero-content">
+      <h1>Contact Country Roofing and Construction Today.</h1>
+      <p>We're here to help with all your roofing and construction needs.</p>
+    </div>
+  </section>
+
+  <!-- Contact Section -->
+  <section class="section">
+    <div class="container contact-grid">
+      <!-- Contact Info -->
+      <div class="contact-info">
+        <h2>Get In Touch</h2>
+
+        <div class="info-card">
+          <div class="info-icon">
+            <svg aria-hidden="true" width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M22 16.92v3a2 2 0 01-2.18 2 19.79 19.79 0 01-8.63-3.07 19.5 19.5 0 01-6-6 19.79 19.79 0 01-3.07-8.67A2 2 0 014.11 2h3a2 2 0 012 1.72 12.84 12.84 0 00.7 2.81 2 2 0 01-.45 2.11L8.09 9.91a16 16 0 006 6l1.27-1.27a2 2 0 012.11-.45 12.84 12.84 0 002.81.7A2 2 0 0122 16.92z"/></svg>
+          </div>
+          <div>
+            <h3>Call Us</h3>
+            <a href="tel:+12693033604">(269) 303-3604</a>
+          </div>
+        </div>
+
+        <div class="info-card">
+          <div class="info-icon">
+            <svg aria-hidden="true" width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M4 4h16c1.1 0 2 .9 2 2v12c0 1.1-.9 2-2 2H4c-1.1 0-2-.9-2-2V6c0-1.1.9-2 2-2z"/><polyline points="22,6 12,13 2,6"/></svg>
+          </div>
+          <div>
+            <h3>Email Us</h3>
+            <a href="mailto:269country@gmail.com">269country@gmail.com</a>
+          </div>
+        </div>
+
+        <div class="info-card">
+          <div class="info-icon">
+            <svg aria-hidden="true" width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M21 10c0 7-9 13-9 13s-9-6-9-13a9 9 0 0118 0z"/><circle cx="12" cy="10" r="3"/></svg>
+          </div>
+          <div>
+            <h3>Service Area</h3>
+            <p>Kalamazoo, MI</p>
+            <p class="areas">Kalamazoo County · Barry County · Allegan County · Van Buren County</p>
+          </div>
+        </div>
+
+        <div class="info-card">
+          <div class="info-icon">
+            <svg aria-hidden="true" width="24" height="24" viewBox="0 0 24 24" fill="currentColor"><path d="M24 12.073c0-6.627-5.373-12-12-12s-12 5.373-12 12c0 5.99 4.388 10.954 10.125 11.854v-8.385H7.078v-3.47h3.047V9.43c0-3.007 1.792-4.669 4.533-4.669 1.312 0 2.686.235 2.686.235v2.953H15.83c-1.491 0-1.956.925-1.956 1.874v2.25h3.328l-.532 3.47h-2.796v8.385C19.612 23.027 24 18.062 24 12.073z"/></svg>
+          </div>
+          <div>
+            <h3>Follow Us</h3>
+            <a href="https://facebook.com/profile.php?id=61555016512639" target="_blank" rel="noopener noreferrer">Facebook</a>
+          </div>
+        </div>
+      </div>
+
+      <!-- Contact Form -->
+      <div class="contact-form-wrap">
+        <h2>Have Questions?</h2>
+        <p>Fill out the form below and we'll get back to you as soon as possible.</p>
+        <form class="contact-form" action="https://formsubmit.co/269country@gmail.com" method="POST">
+          <!-- Anti-spam honeypot -->
+          <input type="text" name="_honey" style="display:none" aria-hidden="true" tabindex="-1" />
+          <!-- Disable captcha page -->
+          <input type="hidden" name="_captcha" value="false" />
+          <!-- Redirect after submission -->
+          <input type="hidden" name="_next" value="https://countryroofingandconstruction.com/contact?sent=true" />
+          <!-- Subject line -->
+          <input type="hidden" name="_subject" value="New Contact Form Submission — Country Roofing" />
+
+          <div class="form-row">
+            <div class="form-group">
+              <label for="firstName">First Name</label>
+              <input type="text" id="firstName" name="firstName" placeholder="John" autocomplete="given-name" />
+            </div>
+            <div class="form-group">
+              <label for="lastName">Last Name</label>
+              <input type="text" id="lastName" name="lastName" placeholder="Doe" autocomplete="family-name" />
+            </div>
+          </div>
+
+          <div class="form-row">
+            <div class="form-group">
+              <label for="email">Email <span class="required">*</span></label>
+              <input type="email" id="email" name="email" placeholder="john@example.com" required autocomplete="email" />
+            </div>
+            <div class="form-group">
+              <label for="phone">Phone <span class="required">*</span></label>
+              <input type="tel" id="phone" name="phone" placeholder="(269) 555-1234" required autocomplete="tel" />
+            </div>
+          </div>
+
+          <div class="form-group">
+            <label for="message">Message <span class="required">*</span></label>
+            <textarea id="message" name="message" rows="5" placeholder="Tell us about your project..." required></textarea>
+          </div>
+
+          <button type="submit" class="btn btn--cta btn--full">Submit</button>
+        </form>
+
+        <div id="success-message" class="success-message" style="display:none;">
+          <svg width="28" height="28" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M22 11.08V12a10 10 0 11-5.93-9.14"/><polyline points="22 4 12 14.01 9 11.01"/></svg>
+          <p>Thank you! Your message has been sent. We'll get back to you shortly.</p>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  </main>
+
+  <Footer />
+</BaseLayout>
+
+<script>
+  // Show success message if redirected back after form submission
+  if (window.location.search.includes('sent=true')) {
+    const msg = document.getElementById('success-message');
+    if (msg) msg.style.display = 'flex';
+  }
+</script>
+
+<style>
+  .page-hero {
+    position: relative;
+    padding: 8rem 0 5rem;
+    background: url('/images/668f200b74ee2e164978e37b.jpg') center/cover no-repeat;
+    color: var(--color-white);
+  }
+
+  .page-hero-overlay {
+    position: absolute;
+    inset: 0;
+    background: linear-gradient(135deg, rgba(15,23,42,0.9) 0%, rgba(30,58,95,0.7) 100%);
+  }
+
+  .page-hero-content {
+    position: relative;
+    max-width: 700px;
+  }
+
+  .page-hero-content h1 {
+    color: var(--color-white);
+    margin-bottom: 1rem;
+  }
+
+  .page-hero-content p {
+    font-size: 1.2rem;
+    opacity: 0.9;
+  }
+
+  /* Contact Grid */
+  .contact-grid {
+    display: grid;
+    grid-template-columns: 1fr 1.3fr;
+    gap: 4rem;
+  }
+
+  .contact-info h2,
+  .contact-form-wrap h2 {
+    margin-bottom: 1.5rem;
+  }
+
+  .contact-form-wrap > p {
+    color: var(--color-text-secondary);
+    margin-bottom: 1.5rem;
+  }
+
+  /* Info Cards */
+  .info-card {
+    display: flex;
+    gap: 1rem;
+    margin-bottom: 1.5rem;
+    padding: 1.25rem;
+    background: var(--color-light);
+    border-radius: 10px;
+  }
+
+  .info-icon {
+    color: var(--color-primary);
+    flex-shrink: 0;
+    margin-top: 0.125rem;
+  }
+
+  .info-card h3 {
+    font-size: 1rem;
+    margin-bottom: 0.25rem;
+  }
+
+  .info-card a {
+    color: var(--color-primary);
+    font-weight: 500;
+  }
+
+  .info-card p {
+    font-size: 0.9rem;
+    color: var(--color-text-secondary);
+  }
+
+  .areas {
+    font-size: 0.825rem !important;
+    margin-top: 0.25rem;
+  }
+
+  /* Form */
+  .required {
+    color: #e53e3e;
+  }
+
+  .btn--full {
+    width: 100%;
+    padding: 1rem;
+    font-size: 1.05rem;
+  }
+
+  .success-message {
+    display: flex;
+    align-items: center;
+    gap: 0.75rem;
+    margin-top: 1.5rem;
+    padding: 1rem 1.25rem;
+    background: #f0fdf4;
+    border: 1px solid #86efac;
+    border-radius: 8px;
+    color: #166534;
+  }
+
+  .success-message p {
+    font-weight: 500;
+  }
+
+  @media (max-width: 768px) {
+    .contact-grid {
+      grid-template-columns: 1fr;
+      gap: 2rem;
+    }
+
+    .page-hero {
+      padding: 6rem 0 3rem;
+    }
+  }
+
+  @media (max-width: 480px) {
+    .page-hero {
+      padding: 4.5rem 0 2.5rem;
+    }
+
+    .info-card {
+      padding: 1rem;
+    }
+  }
+</style>

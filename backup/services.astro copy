@@ -1,0 +1,411 @@
+---
+import BaseLayout from '../layouts/BaseLayout.astro';
+import Header from '../components/Header.astro';
+import Footer from '../components/Footer.astro';
+
+const services = [
+  {
+    title: 'Residential Roofing',
+    description: 'Expert residential roofing services providing high-quality materials and professional installation to ensure your home is protected and looks great for years to come.',
+    image: '/images/e1e0edef-f62b-4c22-9e31-484ff9abd5e7.jpg',
+    alt: 'Residential roofing installation'
+  },
+  {
+    title: 'Commercial Roofing',
+    description: 'Reliable commercial roofing solutions tailored to your business needs, offering durable materials and expert craftsmanship for a roof that will last.',
+    image: '/images/ec11a62b-8128-407f-94f3-40beecee40c6.jpg',
+    alt: 'Commercial roofing project'
+  },
+  {
+    title: 'Roof Repair',
+    description: 'Comprehensive roof repair services to address leaks, damage, and wear, ensuring your roof remains sturdy and secure through all weather conditions.',
+    image: '/images/28446c0c-e7dd-49a4-8e8c-68ae481a1486.jpg',
+    alt: 'Roof repair work in progress'
+  },
+  {
+    title: 'Storm Damage Repair',
+    description: 'Prompt and efficient storm damage repair services to restore your roof and property, minimizing downtime and preventing further damage after severe weather.',
+    image: '/images/c4d4aad2-03e1-43dd-89e3-864ef9240af4.jpg',
+    alt: 'Storm damage roof repair'
+  },
+  {
+    title: 'Roof Replacement',
+    description: 'High-quality roof replacement services using top-grade materials and expert installation to provide your home or business with a durable, new roof.',
+    image: '/images/e6f372d2-6d20-4930-893f-1ce6a9d42040.jpg',
+    alt: 'Complete roof replacement project'
+  },
+  {
+    title: 'Home Renovations',
+    description: 'Add the finishing touch to your home renovations with a premium new roof, installed by our experienced team for superior craftsmanship.',
+    image: '/images/7e8e251b-7314-43b5-8e04-424ca90e810d.jpg',
+    alt: 'Home renovation and roofing project'
+  },
+];
+
+const faqs = [
+  {
+    q: 'What services does Country Roofing & Construction LLC offer?',
+    a: 'Country Roofing & Construction LLC provides a range of services including roofing installation, repair, and replacement. Additionally, we offer construction services such as remodeling, siding installation, and gutter installation.'
+  },
+  {
+    q: 'Where is Country Roofing & Construction LLC located?',
+    a: 'Country Roofing & Construction LLC is located in Kalamazoo, MI, serving Kalamazoo County, Barry County, Allegan County, Van Buren County, and surrounding areas.'
+  },
+  {
+    q: 'How experienced is Country Roofing & Construction LLC?',
+    a: 'With over 15 years of combined experience in the industry, Country Roofing & Construction LLC brings a wealth of expertise to every project.'
+  },
+  {
+    q: 'Is Country Roofing & Construction LLC licensed and insured?',
+    a: 'Yes, Country Roofing & Construction LLC is fully licensed and insured to provide roofing and construction services in Southwest Michigan.'
+  },
+  {
+    q: 'What types of roofing materials does Country Roofing & Construction LLC work with?',
+    a: 'We work with a variety of roofing materials including asphalt shingles, metal roofing, tile roofing, and more. We can help you choose the best option for your home or business.'
+  },
+  {
+    q: 'How does Country Roofing & Construction LLC handle warranties?',
+    a: 'We stand behind our workmanship and materials, offering warranties on both to ensure customer satisfaction and peace of mind.'
+  },
+  {
+    q: 'Does Country Roofing & Construction LLC offer free estimates?',
+    a: 'Yes, we provide free estimates for all of our services. Simply contact us to schedule a consultation.'
+  },
+  {
+    q: 'How long does it take to complete a project?',
+    a: 'The timeline for completion varies depending on the size and scope of the project. We strive to complete projects efficiently without compromising quality.'
+  },
+  {
+    q: 'Does Country Roofing & Construction LLC offer financing options?',
+    a: 'We may offer financing options to help clients manage the costs of their projects. Contact us for more information about financing availability.'
+  },
+  {
+    q: 'How can I schedule a consultation?',
+    a: 'Contact us for details. Our friendly team will be happy to discuss your roofing or construction needs and provide guidance on next steps.'
+  },
+];
+const faqSchema = {
+  "@context": "https://schema.org",
+  "@type": "FAQPage",
+  "mainEntity": faqs.map(faq => ({
+    "@type": "Question",
+    "name": faq.q,
+    "acceptedAnswer": {
+      "@type": "Answer",
+      "text": faq.a
+    }
+  }))
+};
+---
+
+<BaseLayout
+  title="Roofing & Construction Services | Country Roofing & Construction LLC"
+  description="Full-service roofing contractor: residential roofing, commercial roofing, roof repair, storm damage repair, roof replacement, siding, gutters & home renovations in West Michigan."
+  canonical="https://countryroofingandconstruction.com/services"
+  ogTitle="Our Services | Country Roofing & Construction LLC"
+  ogDescription="Comprehensive roofing and construction services for homes and businesses across West Michigan."
+  extraSchema={faqSchema}
+>
+  <Header />
+
+  <main id="main-content">
+
+  <!-- Page Hero -->
+  <section class="page-hero">
+    <div class="page-hero-overlay"></div>
+    <div class="container page-hero-content">
+      <h1>West Michigan Roofing Services</h1>
+      <p>Comprehensive roofing and construction solutions for residential and commercial properties.</p>
+    </div>
+  </section>
+
+  <!-- Services Grid -->
+  <section class="section">
+    <div class="container">
+      <div class="services-grid">
+        {services.map(service => (
+          <div class="service-card">
+            <div class="service-card-img">
+              <img src={service.image} alt={service.alt} loading="lazy" />
+            </div>
+            <div class="service-card-body">
+              <h3>{service.title}</h3>
+              <p>{service.description}</p>
+            </div>
+          </div>
+        ))}
+      </div>
+    </div>
+  </section>
+
+  <!-- Materials -->
+  <section class="section section--light">
+    <div class="container materials-section">
+      <div class="materials-text">
+        <h2>Materials We Work With</h2>
+        <p>We use only high-quality, proven materials for every project. Our team can help you choose the best option based on your budget, style, and performance needs.</p>
+        <ul class="materials-list">
+          <li>Asphalt Shingles</li>
+          <li>Metal Roofing</li>
+          <li>Tile Roofing</li>
+          <li>Siding &amp; Gutters</li>
+        </ul>
+        <a href="/contact" class="btn btn--primary mt-3">Get A Free Estimate</a>
+      </div>
+      <div class="materials-image">
+        <img src="/images/69c0740b-7e9f-4b0b-817d-6d5855b2249e.jpg" alt="Roofing materials and tools" loading="lazy" />
+      </div>
+    </div>
+  </section>
+
+  <!-- FAQ -->
+  <section class="section">
+    <div class="container">
+      <div class="section-header">
+        <h2>Frequently Asked Questions</h2>
+      </div>
+      <div class="faq-list">
+        {faqs.map((faq, i) => (
+          <details class="faq-item">
+            <summary class="faq-question">{faq.q}</summary>
+            <div class="faq-answer">
+              <p>{faq.a}</p>
+            </div>
+          </details>
+        ))}
+      </div>
+    </div>
+  </section>
+
+  <!-- CTA -->
+  <section class="section section--dark text-center">
+    <div class="container">
+      <h2>Ready to Start Your Project?</h2>
+      <p class="cta-sub">Get a free estimate today. We're here to help with all your roofing and construction needs.</p>
+      <div class="cta-actions">
+        <a href="/contact" class="btn btn--cta">Request Free Estimate</a>
+        <a href="tel:+12693033604" class="btn btn--outline">Call (269) 303-3604</a>
+      </div>
+    </div>
+  </section>
+
+  </main>
+
+  <Footer />
+</BaseLayout>
+
+<style>
+  .page-hero {
+    position: relative;
+    padding: 8rem 0 5rem;
+    background: url('/images/667bf796e39b02a994b166c9.jpg') center/cover no-repeat;
+    color: var(--color-white);
+  }
+
+  .page-hero-overlay {
+    position: absolute;
+    inset: 0;
+    background: linear-gradient(135deg, rgba(15,23,42,0.9) 0%, rgba(30,58,95,0.7) 100%);
+  }
+
+  .page-hero-content {
+    position: relative;
+    max-width: 700px;
+  }
+
+  .page-hero-content h1 {
+    color: var(--color-white);
+    margin-bottom: 1rem;
+  }
+
+  .page-hero-content p {
+    font-size: 1.2rem;
+    opacity: 0.9;
+  }
+
+  /* Services Grid */
+  .services-grid {
+    display: grid;
+    grid-template-columns: repeat(3, 1fr);
+    gap: 2rem;
+  }
+
+  .service-card {
+    border-radius: 8px;
+    overflow: hidden;
+    background: var(--color-white);
+    box-shadow: 0 2px 12px rgba(0,0,0,0.06);
+    transition: transform 0.3s, box-shadow 0.3s;
+  }
+
+  .service-card:hover {
+    transform: translateY(-4px);
+    box-shadow: 0 8px 24px rgba(0,0,0,0.12);
+  }
+
+  .service-card-img img {
+    width: 100%;
+    height: 220px;
+    object-fit: cover;
+  }
+
+  .service-card-body {
+    padding: 1.5rem;
+  }
+
+  .service-card-body h3 {
+    margin-bottom: 0.75rem;
+    color: var(--color-primary);
+  }
+
+  .service-card-body p {
+    color: var(--color-text-secondary);
+    font-size: 0.95rem;
+    line-height: 1.6;
+  }
+
+  /* Materials */
+  .materials-section {
+    display: grid;
+    grid-template-columns: 1fr 1fr;
+    gap: 3rem;
+    align-items: center;
+  }
+
+  .materials-text p {
+    color: var(--color-text-secondary);
+    font-size: 1.05rem;
+    margin-top: 1rem;
+  }
+
+  .materials-list {
+    list-style: none;
+    margin-top: 1.5rem;
+  }
+
+  .materials-list li {
+    padding: 0.5rem 0;
+    padding-left: 1.5rem;
+    position: relative;
+    font-weight: 500;
+  }
+
+  .materials-list li::before {
+    content: '✓';
+    position: absolute;
+    left: 0;
+    color: var(--color-accent);
+    font-weight: 700;
+  }
+
+  .materials-image img {
+    border-radius: 8px;
+    box-shadow: 0 20px 40px rgba(0,0,0,0.12);
+  }
+
+  /* FAQ */
+  .faq-list {
+    max-width: 800px;
+    margin: 0 auto;
+  }
+
+  .faq-item {
+    border-bottom: 1px solid var(--color-border);
+  }
+
+  .faq-question {
+    padding: 1.25rem 0;
+    font-weight: 600;
+    font-size: 1.05rem;
+    cursor: pointer;
+    list-style: none;
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+  }
+
+  .faq-question::-webkit-details-marker {
+    display: none;
+  }
+
+  .faq-question::after {
+    content: '+';
+    font-size: 1.5rem;
+    color: var(--color-primary);
+    font-weight: 300;
+    transition: transform 0.2s;
+    flex-shrink: 0;
+    margin-left: 1rem;
+  }
+
+  .faq-item[open] .faq-question::after {
+    content: '−';
+  }
+
+  .faq-answer {
+    padding-bottom: 1.25rem;
+  }
+
+  .faq-answer p {
+    color: var(--color-text-secondary);
+    line-height: 1.7;
+  }
+
+  /* CTA */
+  .cta-sub {
+    color: #c5cdd8;
+    font-size: 1.1rem;
+    margin: 1rem auto 2rem;
+    max-width: 600px;
+  }
+
+  .cta-actions {
+    display: flex;
+    justify-content: center;
+    gap: 1rem;
+    flex-wrap: wrap;
+  }
+
+  @media (max-width: 900px) {
+    .services-grid {
+      grid-template-columns: 1fr 1fr;
+    }
+  }
+
+  @media (max-width: 768px) {
+    .services-grid {
+      grid-template-columns: 1fr;
+    }
+
+    .materials-section {
+      grid-template-columns: 1fr;
+    }
+
+    .page-hero {
+      padding: 6rem 0 3rem;
+    }
+  }
+
+  @media (max-width: 480px) {
+    .page-hero {
+      padding: 4.5rem 0 2.5rem;
+    }
+
+    .page-hero-content p {
+      font-size: 1rem;
+    }
+
+    .service-card-body {
+      padding: 1.25rem;
+    }
+
+    .faq-question {
+      padding: 1rem;
+      font-size: 0.95rem;
+    }
+
+    .faq-answer {
+      padding: 0 1rem 1rem;
+    }
+  }
+</style>
